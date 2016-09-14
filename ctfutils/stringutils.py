@@ -1,3 +1,5 @@
+import re
+
 def chunks(l,n):
     """Yield n-sized chunks from l.
     """
@@ -32,14 +34,12 @@ def binencode(s, out='string'):
     elif out == 'list':
         return enc
 
-def replace(s, old, new):
+def replace(s, replacements):
     """Generalized substitution.
     old an new are lists of substrings to be replaced
     """
-    res = s
-    for k, v in zip(old, new):
-        res = res.replace(k, v)
-    return res
+    pattern = re.compile("|".join([re.escape(k) for k in replacements.keys()]), re.M)
+    return pattern.sub(lambda x: replacements[x.group(0)], s)
 
 def subst(inp_string, alpha, subst):
     """Substitute alphabet in inp_string (alpha) with subst alphabet
