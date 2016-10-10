@@ -49,24 +49,3 @@ def subst(inp_string, alpha, subst):
         d[c] = subst[idx_c]
     return ''.join(d[c] if c in d else c for c in inp_string)
 
-
-'''
-def morse(s, dash='-'):
-    """Encode string as Morse code string.
-    """
-    alph = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890')
-    mcodes = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..', '.---', '-.-', '.-..', '--',
-                '-.', '---', '.--.', '--.-', '.-.', '...', '-', '..-', '...-', '.--', '-..-', '-.--', '--..',
-                '.----', '..---', '...--', '....-', '.....', '-....', '--...', '---..', '----.', '-----']
-    return replace(s, alph, mcodes)
-
-
-def morsedec(s):
-    """Decode morse string.
-    """
-    alph = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890')
-    mcodes = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..', '.---', '-.-', '.-..', '--',
-                '-.', '---', '.--.', '--.-', '.-.', '...', '-', '..-', '...-', '.--', '-..-', '-.--', '--..',
-                '.----', '..---', '...--', '....-', '.....', '-....', '--...', '---..', '----.', '-----']
-    return replace(s, mcodes, alph)
-'''
